@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.0.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.1'
@@ -45,4 +46,5 @@ end
 # gem 'debugger', group: [:development, :test]
 gem 'protected_attributes'
 gem 'font-awesome-less'
+gem 'rails_12factor'
 
