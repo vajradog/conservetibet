@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  teacher: MyString
+  recorded: MyString
+  sound: MyString
+  image: MyString
+  title: MyString
+  content: MyText
+
+two:
+  teacher: MyString
+  recorded: MyString
+  sound: MyString
+  image: MyString
+  title: MyString
+  content: MyText

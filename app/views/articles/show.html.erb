@@ -1,0 +1,67 @@
+<div class="row">
+    <div class="twelve columns" id="main-container">
+      <section class="row" id="home">
+    
+          <div class="five columns home-left">
+            <div id="home-photo"><%=raw @article.image %></div>
+          </div>
+          
+          <div class="seven columns home-right">
+            <div id="home-text">
+            <div id="home-social-container">
+              <br/> <br/>
+            </div>
+              <h3 class="bold" >  <%= @article.teacher %></h3>
+              <h5 >  <%= @article.recorded %></h5>
+              <hr class="highlight-hr" />
+              <p><%=raw @article.sound %></p>
+            </div>
+            
+          </div>
+        
+        
+      </section><!-- end of Home -->
+        
+      
+      <a id="profile-nav">&nbsp;</a>
+      <section class="row page" id="profile" data-magellan-destination='profile'>
+      
+        <div class="twelve columns">
+          <h5 class="page-heading"><%= @article.title %></h5>
+
+        </div>
+        
+        <div class="twelve columns">
+        
+         
+<p>
+  <%= raw @article.content %>
+
+            </p>  
+    
+
+        </div>
+        
+      </section><!-- end of Profile -->
+      
+
+   
+
+      
+<section class="row page" id="profile" data-magellan-destination='profile'>
+        
+            <div class="twelve columns">
+                <h5 class="page-heading">Filed under the following tag(s):</h5>
+     
+              <p>You can click the tags for related contents</p>
+                  <h6  >
+      <%= raw @article.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %>
+    </h6>
+                </div>
+            </section>
+
+    
+  </div><!-- end of Main Container -->
+
+<p id="notice"><%= notice %></p>
+

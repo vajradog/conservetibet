@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Conservetibet</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+  
+  <link href='http://fonts.googleapis.com/css?family=Raleway:400,200' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+	 
+<div class="navi">
+            <ul >
+              <li ><%= link_to "Home", root_path, class: "navigation"  %></li>
+
+              <li><%= link_to "Browse", browse_path, class: "navigation" %></li>
+              <li><%= link_to "About", about_path, class: "navigation" %></li>
+                         
+            </ul>
+            </div> 
+ <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, id: "flash_#{name}" %>
+        <%end%>
+<%= yield %>
+
+</body>
+</html>
