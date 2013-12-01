@@ -46,5 +46,8 @@ end
 # gem 'debugger', group: [:development, :test]
 gem 'protected_attributes'
 gem 'font-awesome-less'
-gem 'rails_12factor'
+group :production do
+      gem 'rails_12factor'
+    end
+
 
