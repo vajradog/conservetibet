@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20131201173025) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "articles", force: true do |t|
     t.string   "teacher"
     t.string   "recorded"
@@ -31,8 +34,8 @@ ActiveRecord::Schema.define(version: 20131201173025) do
     t.datetime "updated_at"
   end
 
-  add_index "taggings", ["article_id"], name: "index_taggings_on_article_id"
-  add_index "taggings", ["tag_id"], name: "index_taggings_on_tag_id"
+  add_index "taggings", ["article_id"], name: "index_taggings_on_article_id", using: :btree
+  add_index "taggings", ["tag_id"], name: "index_taggings_on_tag_id", using: :btree
 
   create_table "tags", force: true do |t|
     t.string   "name"
