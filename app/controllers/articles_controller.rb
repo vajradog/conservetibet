@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_filter :authenticate, only: [:edit, :new, :update, :destroy]
+  before_filter :authenticate_with_basic_auth, :only => [:edit, :new, :destroy]
 
 
   # GET /articles
@@ -62,14 +62,8 @@ class ArticlesController < ApplicationController
       
     end
   end
-    protected
+    
 
-def authenticate
-  authenticate_or_request_with_http_basic do |username, password|
-
-    username == "foo" && password == "bar"
-  end
-end
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -80,5 +74,9 @@ end
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
       params.require(:article).permit(:teacher, :recorded, :sound, :image, :title, :content)
+    end
+
+    def user_params
+      params.require(:user).permit(:login, :password, :password_confirmation)
     end
 end
